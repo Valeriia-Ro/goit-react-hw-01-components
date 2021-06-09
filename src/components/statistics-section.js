@@ -1,16 +1,16 @@
 import React from "react";
 import PropTypes from 'prop-types';
+import styles from '../styles/statistics-section.module.css';
 
 const Statistics = ({title, stats}) => {
 return (
-    <section class="statistics" >
-        {title && <h2 class="title">{title}</h2>}
-
-        <ul class="stat-list">
+    <section className={styles.statistics} >
+        {title && <h2 className={styles.title}>{title}</h2>}
+        <ul className={styles.stat_list}>
             {stats.map(({ id, label, percentage}) => (
-            <li class="item" key={id}>
-                <span class="label">{label}</span>
-                <span class="percentage">{percentage}%</span>
+            <li key={id} className={styles.item} style = {{backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16) }}>
+                <span className={styles.label}>{label}</span>
+                <span className={styles.percentage}>{percentage}%</span>
             </li>
             ))}
         </ul>
